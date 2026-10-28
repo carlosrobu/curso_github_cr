@@ -10,6 +10,11 @@ def celsius_a_fahrenheit(celsius: float) -> float:
     return round(celsius * 9 / 5 + 32, 2)
 
 
+def celsius_a_kelvin(celsius: float) -> float:
+    """Convierte grados Celsius a Kelvin, redondeado a 2 decimales."""
+    return round(celsius + 273.15, 2)
+
+
 st.title("Conversor de temperatura")
 
 celsius = st.number_input(
@@ -21,7 +26,10 @@ celsius = st.number_input(
 )
 
 fahrenheit = celsius_a_fahrenheit(celsius)
+kelvin = celsius_a_kelvin(celsius)
 
-st.metric(label=f"{celsius:.2f} °C equivalen a", value=f"{fahrenheit:.2f} °F")
-st.caption("Fórmula: °F = °C × 9/5 + 32")
+col1, col2 = st.columns(2)
+col1.metric(label=f"{celsius:.2f} °C equivalen a", value=f"{fahrenheit:.2f} °F")
+col2.metric(label=f"{celsius:.2f} °C equivalen a", value=f"{kelvin:.2f} K")
+st.caption("Fórmulas: °F = °C × 9/5 + 32  |  K = °C + 273.15")
 
