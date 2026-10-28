@@ -6,8 +6,8 @@ st.set_page_config(page_title="Conversor de temperatura", page_icon="🌡️")
 
 
 def celsius_a_fahrenheit(celsius: float) -> float:
-    """Convierte grados Celsius a grados Fahrenheit."""
-    return celsius * 9 / 5 + 32
+    """Convierte grados Celsius a grados Fahrenheit, redondeado a 2 decimales."""
+    return round(celsius * 9 / 5 + 32, 2)
 
 
 st.title("Conversor de temperatura")
@@ -24,3 +24,4 @@ fahrenheit = celsius_a_fahrenheit(celsius)
 
 st.metric(label=f"{celsius:.2f} °C equivalen a", value=f"{fahrenheit:.2f} °F")
 st.caption("Fórmula: °F = °C × 9/5 + 32")
+
