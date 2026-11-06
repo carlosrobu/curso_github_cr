@@ -92,3 +92,6 @@ else:
 
 with st.expander("📐 Ver fórmula"):
     st.markdown(f"**{formula}**")
+
+with st.expander("📐 Ver fórmula"):
+    st.markdown(f"**{formula}**")
